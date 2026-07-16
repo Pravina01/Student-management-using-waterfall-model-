@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart School Student Management System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h1>🏫 Smart School Student Management System</h1>
+
+<h2>📚 Student Information</h2>
+
+<div class="top">
+    <a href="/add" class="add-btn">➕ Add New Student</a>
+</div>
+
+<table>
+
+<tr>
+    <th>Name</th>
+    <th>Reg No</th>
+    <th>Department</th>
+    <th>Attendance</th>
+    <th>Status</th>
+    <th>Action</th>
+</tr>
+
+{% for s in students %}
+
+<tr>
+    <td>{{s[1]}}</td>
+    <td>{{s[2]}}</td>
+    <td>{{s[3]}}</td>
+    <td>{{s[4]}}%</td>
+    <td>{{s[5]}}</td>
+
+    <td>
+        <a href="/edit/{{s[0]}}" class="edit">✏ Edit</a>
+
+        <a href="/delete/{{s[0]}}" class="delete">🗑 Delete</a>
+    </td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<footer>
+    © 2026 Smart School Student Management System
+</footer>
+
+</body>
+</html>
